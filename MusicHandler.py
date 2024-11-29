@@ -4,7 +4,6 @@ import os
 
 
 def download_video(video_link: str):
-        # url input from user
         yt = YouTube(str(video_link))
 
         # extract only audio
@@ -20,8 +19,6 @@ def download_video(video_link: str):
         base, ext = os.path.splitext(out_file)
         new_file = base + '.wav'
         os.rename(out_file, new_file)
-
-
 
         # result of success
         print(yt.title + " has been successfully downloaded.")
