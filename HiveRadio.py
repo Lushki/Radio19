@@ -3,15 +3,25 @@ import MusicHandler
 import PlaylistHandler
 
 API_KEY = "AIzaSyAoUtUawnPL0U2_b2XqHGpfsefkMjn7EDE"
-# https://www.spotlistr.com/export/spotify-playlist
+DESTINATION_PATH = "./Songs/SongList"
+
+"""
+IMPORTANT: Use the link: https://www.spotlistr.com/export/spotify-playlist
+copy the name of the song and the artist into the SongList.txt file in Songs directory
+"""
+
 
 def main():
+    """
+    Downloads all the songs in the SongList.txt inside the Songs directory
+    :return: None
+    """
     print("***************************Hive*Radio***************************")
     try:
-        with open("./SongList.txt", 'r') as file:
+        with open("./Songs/SongList.txt", 'r') as file:
             for song in file.read().split("\n"):
                 video_name = PlaylistHandler.get_first_youtube_link_api(song, API_KEY)
-                MusicHandler.download_video(video_name)
+                MusicHandler.download_video(video_name, DESTINATION_PATH)
     except Exception as e:
         print(f"error - {e}")
     print("****************************************************************")

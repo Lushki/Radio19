@@ -2,6 +2,12 @@ from googleapiclient.discovery import build
 
 
 def get_first_youtube_link_api(query, api_key):
+    """
+    fetches the link to the title given on YouTube
+    :param query:
+    :param api_key:
+    :return: a YouTube link
+    """
     youtube = build('youtube', 'v3', developerKey=api_key)
     # Correct method to call search().list
     request = youtube.search().list(
