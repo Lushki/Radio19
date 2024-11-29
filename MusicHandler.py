@@ -21,7 +21,7 @@ def download_video(video_link: str):
         os.rename(out_file, new_file)
 
         # result of success
-        print(yt.title + " has been successfully downloaded.")
+        print("[" + yt.title + " has been successfully downloaded.]")
 
 
 
