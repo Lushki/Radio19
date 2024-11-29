@@ -16,6 +16,8 @@ def main():
     Downloads all the songs in the SongList.txt inside the Songs directory
     :return: None
     """
+    print("Use the following link to format your songs: https://www.spotlistr.com/export/spotify-playlist")
+
     print("***************************Hive*Radio***************************")
     try:
         with open("./Songs/SongList.txt", 'r') as file:
