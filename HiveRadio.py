@@ -2,12 +2,15 @@
 import MusicHandler
 import PlaylistHandler
 
-API_KEY = "AIzaSyAoUtUawnPL0U2_b2XqHGpfsefkMjn7EDE"
+with open("constants.txt","r") as file:
+    API_KEY = file.read().split("\n")
+    print(API_KEY)
 DESTINATION_PATH = "./Songs/SongList"
 
 """
 IMPORTANT: Use the link: https://www.spotlistr.com/export/spotify-playlist
 copy the name of the song and the artist into the SongList.txt file in Songs directory
+and add an API key to the program
 """
 
 
